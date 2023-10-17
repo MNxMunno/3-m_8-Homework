@@ -717,6 +717,7 @@ header .nav .nav-items #dark-light {
   color: #fff;
 }
 .business .business-content .business_cards .business_card img {
+  width: 100%;
   padding-top: 14px;
 }
 
