@@ -64,6 +64,9 @@ header .nav .menu {
   background: transparent;
   cursor: pointer;
 }
+header .nav .btns {
+  display: none;
+}
 header .nav .nav-items {
   display: flex;
   align-items: center;
@@ -110,7 +113,7 @@ header .nav .nav-items .nav-item:nth-child(6):hover {
   border-radius: 4px;
   background: #02897a;
 }
-header .nav .nav-items #dark-light {
+header #dark-light {
   cursor: pointer;
   border: 0;
   background-color: transparent;
@@ -842,8 +845,14 @@ footer .foot_cards .foot_card_content form .form_btn {
     transition: all 0.3s ease-in-out;
     z-index: 10;
   }
-  #dark-light {
-    display: none;
+  #btns {
+    display: block;
+  }
+  #dark-light1 {
+    display: block;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
   }
   #menu {
     display: block;

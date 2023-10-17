@@ -60,6 +60,9 @@ header {
       background: transparent;
       cursor: pointer;
     }
+    .btns {
+      display: none;
+    }
     .nav-items {
       display: flex;
       align-items: center;
@@ -106,12 +109,12 @@ header {
         border-radius: 4px;
         background: #02897a;
       }
-      #dark-light {
-        cursor: pointer;
-        border: 0;
-        background-color: transparent;
-      }
     }
+  }
+  #dark-light {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
   }
 }
 
@@ -874,8 +877,15 @@ footer {
     z-index: 10;
   }
 
-  #dark-light {
-    display: none;
+  #btns {
+    display: block;
+  }
+
+  #dark-light1 {
+    display: block;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
   }
 
   #menu {
