@@ -36,6 +36,9 @@ body {
 a {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
 
 header {
   padding: 20px 0;
@@ -232,7 +235,7 @@ header {
   }
 }
 
-.customer_cards {
+.resources_cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -240,7 +243,7 @@ header {
   flex-wrap: wrap;
   padding-top: 159px;
   padding-bottom: 150px;
-  .customer_card {
+  .resources_card {
     max-width: 540px;
 
     b {
@@ -270,17 +273,17 @@ header {
       line-height: 26px; /* 162.5% */
       padding: 12px 0 30px;
     }
-    .customer-text {
+    .resources-text {
       max-width: 430px;
       display: flex;
       align-items: center;
       gap: 30px;
     }
-    .customer-text + .customer-text {
+    .resources-text + .resources-text {
       padding-top: 30px;
     }
   }
-  .customer_card + .customer_card {
+  .resources_card + .resources_card {
     padding-top: 150px;
   }
 }
@@ -389,10 +392,15 @@ header {
     line-height: 26px; /* 162.5% */
     padding-bottom: 35px;
   }
+  .item {
+    border-radius: 8px;
+    border: 1px solid #959696;
+  }
   .item img {
     max-width: 548px;
-    border-radius: 8px;
-    background: #fff;
+    border-radius: 8px 8px 0 0;
+
+    overflow: hidden;
   }
   .item p {
     padding: 24px 88px 0 24px;
@@ -410,7 +418,9 @@ header {
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
+    transition: 0.5s;
   }
+
   .item h6 {
     color: #22343d;
     font-family: Poppins;
@@ -419,6 +429,10 @@ header {
     font-weight: 700;
     line-height: 40px; /* 166.667% */
     padding: 12px 30px 40px 24px;
+  }
+  .item:hover h6 {
+    color: #02897a;
+    cursor: pointer;
   }
 }
 
@@ -434,7 +448,8 @@ header {
       font-weight: 700;
       line-height: normal;
     }
-    p {
+
+    .title_price {
       text-align: center;
       color: #22343d;
       font-family: Poppins;
@@ -444,6 +459,360 @@ header {
       line-height: normal;
       padding-top: 8px;
       padding-bottom: 50px;
+    }
+
+    .pricing_cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 71px;
+      .pricing_card {
+        max-width: 322px;
+        border-radius: 8px;
+        // background: #fff;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+        padding: 24px 0 32px;
+        transition: 0.5s;
+        cursor: pointer;
+        .price_title {
+          text-align: center;
+          color: #22343d;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 40px; /* 250% */
+          padding: 0px 75px 0 73px;
+        }
+
+        .price__ {
+          max-width: 200px;
+          height: 100px;
+          color: #02897a;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 76px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 100px; /* 131.579% */
+          letter-spacing: 0.2px;
+          position: relative;
+          sup {
+            color: #02897a;
+            position: absolute;
+            top: 30px;
+            right: 38px;
+            /* Title */
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px; /* 125% */
+            letter-spacing: 0.1px;
+          }
+          sub {
+            position: absolute;
+            bottom: 20px;
+            right: -35px;
+            color: var(--second-text, #afafaf);
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 19px; /* 118.75% */
+            letter-spacing: 0.1px;
+          }
+        }
+
+        .price_text + .price_text {
+          padding-top: 16px;
+        }
+
+        .price_text {
+          color: #22343d;
+          text-align: center;
+          /* Link */
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 22px; /* 137.5% */
+          letter-spacing: 0.2px;
+        }
+        .price_btns {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          padding-top: 38px;
+          .price_btn {
+            border-radius: 8px;
+            background: #02897a;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            padding: 11px 19px;
+          }
+        }
+      }
+      .pricing_card:hover {
+        border-radius: 8px;
+        background: #02897a;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+      }
+      .pricing_card:hover h6 {
+        color: #fff;
+      }
+      .pricing_card:hover .price_title {
+        color: #fff;
+      }
+      .pricing_card:hover .price__ {
+        color: #fff;
+      }
+      .pricing_card:hover sup {
+        color: #fff;
+      }
+      .pricing_card:hover .price_text {
+        color: #fff;
+      }
+      .pricing_card:hover .price_btn {
+        border-radius: 8px;
+        background: #fff;
+        color: #02897a;
+      }
+    }
+  }
+}
+
+.customer {
+  padding-bottom: 157px;
+
+  .customer-content h6 {
+    text-align: center;
+    color: #22343d;
+    font-family: Poppins;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 57px; /* 167.647% */
+    letter-spacing: 0.2px;
+    padding-bottom: 8px;
+  }
+
+  .customer-content p {
+    max-width: 537px;
+    margin: auto;
+    color: #22343d;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 175% */
+    letter-spacing: 0.2px;
+    padding-bottom: 50px;
+  }
+
+  .customer_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    flex-wrap: wrap;
+    .customer_card {
+      max-width: 327px;
+      padding: 28px 26px 24px;
+      border-radius: 5px;
+      border: 1px solid #dedede;
+
+      .customer_text {
+        color: var(--second-text-color, #737373);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 175% */
+        letter-spacing: 0.2px;
+        padding: 16px 0 17px;
+      }
+      .custo_card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        .custo_text {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+
+          .custo_title {
+            color: #02897a;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px; /* 150% */
+            letter-spacing: 0.2px;
+          }
+          & b {
+            color: var(--text-color, #252b42);
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 171.429% */
+            letter-spacing: 0.2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.business {
+  padding-bottom: 150px;
+  .business-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .business_cards {
+      max-width: 968px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 32px;
+      background: #02897a;
+      .business_card h6 {
+        max-width: 510px;
+        color: #fff;
+        font-family: Poppins;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 151.4%; /* 48.448px */
+        padding: 49px 0 0 51px;
+      }
+      .business_btns {
+        padding: 68px 0 36px 51px;
+        .business_btn {
+          border-radius: 8px;
+          background: #fff;
+          color: #02897a;
+          font-family: Poppins;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          padding: 13px 35px;
+          transition: 0.5s;
+        }
+        .business_btn:hover {
+          background-color: #065d53;
+          color: #fff;
+        }
+      }
+      .business_card img {
+        padding-top: 14px;
+      }
+    }
+  }
+}
+
+footer {
+  padding-bottom: 60px;
+  .footer-content p {
+    text-align: center;
+    color: #22343d;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 187.5% */
+    padding-top: 16px;
+  }
+  .foot_cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .site_links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding-top: 24px;
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #edfffc;
+        border-radius: 50%;
+      }
+    }
+    .foot_card {
+      h6 {
+        color: #22343d;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px; /* 150% */
+      }
+      a {
+        color: #22343d;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 35px; /* 218.75% */
+      }
+    }
+    .foot_card_content {
+      h6 {
+        max-width: 280px;
+        height: 6px;
+        color: #22343d;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px; /* 150% */
+      }
+
+      form {
+        padding-top: 94px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 29px;
+        input {
+          padding: 10px 128px 10px 15px;
+          border-radius: 4px;
+          border: 1px solid #bcd0e5;
+          background: #fff;
+          outline: none;
+        }
+        button {
+          display: inline-block;
+          border-radius: 4px;
+          background: #02897a;
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          padding: 8px 12px;
+          border: none;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
