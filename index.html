@@ -28,6 +28,7 @@
           <a href="#">
             <img src="./images/Logo.1.svg" alt="logo" />
           </a>
+          <div class="items_nav"></div>
           <div class="nav-items">
             <a class="nav-item" href="#product">Product</a>
             <a class="nav-item" href="#customer">Customer</a>
@@ -54,6 +55,23 @@
               </svg>
             </button>
           </div>
+          <button class="menu" id="menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="arcs"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </nav>
       </div>
     </header>
@@ -118,7 +136,9 @@
                 </p>
               </div>
             </div>
-            <a href="#" class="product-btn">SIGN UP NOW</a>
+            <div class="product_btns">
+              <a href="#" class="product-btn">SIGN UP NOW</a>
+            </div>
           </div>
         </div>
       </section>
@@ -144,10 +164,10 @@
                 won’t cost you more money,
               </p>
             </div>
-            <div class="resources_card">
-              <img src="./images/document.png" alt="img" />
+            <div class="r_img" class="resources_card">
+              <img class="r_img" src="./images/document.png" alt="img" />
             </div>
-            <div class="resources_card">
+            <div class="r_img" class="resources_card">
               <img src="./images/search-comp.png" alt="img" />
             </div>
             <div class="resources_card">
@@ -514,7 +534,7 @@
                 <h6>knowing you're always on the best energy deal.</h6>
                 <form class="foot_form">
                   <input type="text" name="text" id="text" required />
-                  <button type="submit">Sign up Now</button>
+                  <button class="form_btn" type="submit">Sign up Now</button>
                 </form>
               </div>
             </div>
@@ -543,10 +563,10 @@
         nav: true,
         autoplay: true,
         responsive: {
-          400: {
+          0: {
             items: 1,
           },
-          600: {
+          400: {
             items: 2,
           },
           1000: {

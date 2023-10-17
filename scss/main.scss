@@ -54,6 +54,12 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 32px;
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
     .nav-items {
       display: flex;
       align-items: center;
@@ -113,6 +119,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding-bottom: 114px;
+  gap: 32px;
   .hero_card h1 {
     max-width: 518px;
     padding-top: 145px;
@@ -168,6 +175,7 @@ header {
     }
   }
   .hero_card img {
+    width: 100%;
     padding-top: 25px;
   }
   #play {
@@ -194,7 +202,8 @@ header {
   .product_cards {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 45px;
     padding-bottom: 60px;
     .product_card img {
@@ -219,19 +228,21 @@ header {
       line-height: 26px; /* 162.5% */
     }
   }
-  .product-btn {
-    position: absolute;
-    left: 45%;
-    margin: auto;
-    border-radius: 4px;
-    background: #02897a;
-    color: #fff;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 15px 32px;
+  .product_btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .product-btn {
+      border-radius: 4px;
+      background: #02897a;
+      color: #fff;
+      font-family: Poppins;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      padding: 15px 32px;
+    }
   }
 }
 
@@ -273,6 +284,7 @@ header {
       line-height: 26px; /* 162.5% */
       padding: 12px 0 30px;
     }
+
     .resources-text {
       max-width: 430px;
       display: flex;
@@ -286,6 +298,9 @@ header {
   .resources_card + .resources_card {
     padding-top: 150px;
   }
+  .resources_card .r_img {
+    width: 100%;
+  }
 }
 
 .process {
@@ -295,7 +310,11 @@ header {
   background-size: 100% 80vh;
 
   .process-content {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
     h5 {
       color: #22343d;
       text-align: center;
@@ -329,9 +348,7 @@ header {
     gap: 25px;
     row-gap: 24px;
     flex-wrap: wrap;
-    position: absolute;
-    left: 120px;
-    right: 120px;
+
     .process_card {
       height: 98px;
       display: flex;
@@ -349,7 +366,7 @@ header {
     }
   }
   .process_btns {
-    padding-top: 300px;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,7 +398,7 @@ header {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 145px 0 8px;
+    padding: 150px 0 8px;
   }
   .carousel-content p {
     color: #22343d;
@@ -679,12 +696,15 @@ header {
     justify-content: center;
     align-items: center;
     .business_cards {
-      max-width: 968px;
+      width: 90%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-radius: 32px;
       background: #02897a;
+      .business_card {
+        max-width: 550px;
+      }
       .business_card h6 {
         max-width: 510px;
         color: #fff;
@@ -737,6 +757,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 32px;
+
     .site_links {
       display: flex;
       align-items: center;
@@ -797,7 +819,7 @@ footer {
           background: #fff;
           outline: none;
         }
-        button {
+        .form_btn {
           display: inline-block;
           border-radius: 4px;
           background: #02897a;
@@ -814,5 +836,101 @@ footer {
         }
       }
     }
+  }
+}
+
+//********* MEDIA *********
+
+@media only screen and (max-width: 1111px) {
+  .hero_card {
+    max-width: 50%;
+  }
+
+  .resources_cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(80vh - 50px);
+    background: #fff;
+    opacity: 0.95;
+    padding: 90px 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  #dark-light {
+    display: none;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  .open .nav-items {
+    left: 0;
+  }
+
+  .open {
+    box-shadow: none;
+  }
+
+  .hero_cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .process_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .business_cards {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 888px) {
+  .resources_card {
+    max-width: 400px;
+  }
+
+  .business_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .foot_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero_card h1 {
+    width: 100%;
+    font-size: 32px;
   }
 }
